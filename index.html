@@ -14,9 +14,8 @@
       --text: #e0ffe0;
       --glass-border: rgba(0, 255, 157, 0.15);
     }
-
     * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
-    
+   
     body {
       font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
       background-color: var(--bg);
@@ -24,7 +23,6 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
     .bg-animation {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -32,7 +30,6 @@
                   radial-gradient(circle at 85% 85%, rgba(255, 0, 170, 0.03) 0%, transparent 40%);
       z-index: -1;
     }
-
     nav {
       position: fixed;
       top: 0; width: 100%;
@@ -46,7 +43,6 @@
       padding: 1rem 2rem;
       z-index: 1000;
     }
-
     .nav-logo {
       font-size: 1.5rem;
       font-weight: 900;
@@ -54,7 +50,6 @@
       text-decoration: none;
       text-shadow: 0 0 10px var(--primary);
     }
-
     .nav-links { display: flex; gap: 1.5rem; }
     .nav-links a {
       color: #fff;
@@ -67,15 +62,12 @@
       border-radius: 6px;
     }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--primary); background: rgba(0, 255, 157, 0.08); }
-
     header {
       padding: 10rem 1.5rem 6rem;
       text-align: center;
       background: radial-gradient(circle at center, rgba(0,255,157,0.08) 0%, transparent 70%);
     }
-
     .hero-logo-svg { width: 180px; filter: drop-shadow(0 0 20px var(--primary)); margin-bottom: 2rem; }
-
     .hero-title {
       font-size: clamp(3rem, 10vw, 5.5rem);
       font-weight: 900;
@@ -87,12 +79,10 @@
       margin-bottom: 1.5rem;
       animation: titleGlow 6s infinite;
     }
-
     @keyframes titleGlow {
       0%, 100% { text-shadow: 0 0 20px rgba(0,255,157,0.2); }
       50% { text-shadow: 0 0 40px rgba(0,255,157,0.5); }
     }
-
     .btn {
       display: inline-block;
       padding: 1rem 2.5rem;
@@ -107,16 +97,12 @@
       text-transform: uppercase;
       font-size: 1rem;
     }
-
     .btn:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 40px rgba(0,255,157,0.5); }
     .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); margin-left: 1rem; }
-
     section { max-width: 1200px; margin: 0 auto; padding: 6rem 1.5rem; }
     .section-head { text-align: center; margin-bottom: 4rem; }
     .section-head h2 { font-size: 2.8rem; font-weight: 800; color: var(--primary); text-shadow: 0 0 15px rgba(0,255,157,0.3); }
-
     .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-
     .card {
       background: var(--card-bg);
       border: 1px solid var(--glass-border);
@@ -129,20 +115,16 @@
       overflow: hidden;
     }
     .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0, 255, 157, 0.15); }
-
     .card-badge { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--accent); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; }
     .card-icon { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary); }
     .card h3 { font-size: 1.6rem; color: #fff; margin-bottom: 0.75rem; font-weight: 700; }
     .card p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 1.5rem; flex-grow: 1; }
     .card-price { font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 1.5rem; display: flex; align-items: baseline; gap: 0.5rem; }
     .card-price span { font-size: 1rem; opacity: 0.4; text-decoration: line-through; }
-
     .support-container { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 30px; padding: 3.5rem; max-width: 650px; margin: 0 auto; }
     .form-control { width: 100%; padding: 1rem; background: rgba(0,0,0,0.3); border: 1px solid #222; border-radius: 10px; color: #fff; font-size: 1rem; margin-bottom: 1rem; }
     .form-control:focus { outline: none; border-color: var(--primary); }
-
     footer { text-align: center; padding: 4rem 1.5rem; border-top: 1px solid var(--glass-border); opacity: 0.6; font-size: 0.85rem; }
-
     @media (max-width: 768px) {
       header { padding-top: 8rem; }
       .hero-title { font-size: 2.8rem; }
@@ -152,9 +134,7 @@
   </style>
 </head>
 <body>
-
   <div class="bg-animation"></div>
-
   <nav>
     <a href="#ev" class="nav-logo">WAST-o</a>
     <div class="nav-links">
@@ -163,7 +143,6 @@
       <a href="#destek">Destek</a>
     </div>
   </nav>
-
   <header id="ev">
     <svg class="hero-logo-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -182,7 +161,6 @@
         <a href="#destek" class="btn btn-secondary">İletişime Geç</a>
     </div>
   </header>
-
   <section id="katalog">
     <div class="section-head"><h2>Dijital Katalog</h2></div>
     <div class="product-grid">
@@ -194,34 +172,30 @@
         <div class="card-price">30 TL <span>60 TL</span></div>
         <a href="https://www.itemsatis.com/diger-urun-satislari/wast-o-ilan-intten-para-kazan-oto-teslim-5052586.html" target="_blank" class="btn">Hemen Satın Al</a>
       </div>
-
       <div class="card">
         <span class="card-badge" style="background:#0077ff;">Yeni</span>
         <div class="card-icon">🤖</div>
         <h3>AI & Otomasyon</h3>
         <p>Yapay zeka araçlarını kullanarak pasif gelir kapıları oluşturma stratejileri.</p>
         <div class="card-price">50 TL <span>100 TL</span></div>
-        <a href="#" class="btn" style="background:#333; color:#888; cursor:not-allowed;">Çok Yakında</a>
+        <a href="https://www.itemsatis.com/diger-urun-satislari/ai-otomasyon-wast-o-5055665.html" target="_blank" class="btn">Hemen Satın Al</a>
       </div>
-
       <div class="card">
         <div class="card-icon">📱</div>
         <h3>Sosyal Medya</h3>
         <p>TikTok, Instagram ve YouTube'da algoritmayı domine ederek marka oluşturma rehberi.</p>
         <div class="card-price">45 TL <span>90 TL</span></div>
-        <a href="#" class="btn" style="background:#333; color:#888; cursor:not-allowed;">Çok Yakında</a>
+        <a href="https://www.itemsatis.com/diger-urun-satislari/sosyal-medya-para-kazan-wast-o-rehber-5055702.html" target="_blank" class="btn">Hemen Satın Al</a>
       </div>
-
       <div class="card">
         <div class="card-icon">🛒</div>
         <h3>Dropshipping 2.0</h3>
         <p>2026 şartlarında sermayesiz, stoksuz global e-ticaret yapma yöntemleri.</p>
         <div class="card-price">60 TL <span>120 TL</span></div>
-        <a href="#" class="btn" style="background:#333; color:#888; cursor:not-allowed;">Çok Yakında</a>
+        <a href="https://www.itemsatis.com/diger-urun-satislari/dropshipping-20-sermayesiz-para-kazan-wast-o-5055707.html" target="_blank" class="btn">Hemen Satın Al</a>
       </div>
     </div>
   </section>
-
   <section id="destek">
     <div class="section-head"><h2>İletişim</h2></div>
     <div class="support-container">
@@ -233,12 +207,8 @@
       </form>
     </div>
   </section>
-
   <footer>
     <p>© 2026 WAST-o Digital Academy | editlerbts@gmail.com</p>
   </footer>
-
 </body>
 </html>
-
-
