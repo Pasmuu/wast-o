@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WAST-o | Dijital Girişimcilik Akademisi 2026</title>
-  <meta name="description" content="İnternetten para kazanmanın profesyonel, güncel ve test edilmiş yöntemleri.">
+  <meta name="description" content="İnternetten para kazanmanın profesyonel, güncel ve test edilmiş 50+ yöntemi. Hemen indir, bugün kazanmaya başla.">
   <style>
-    /* WAST-o Neon Cyberpunk Tema Ayarları */
     :root {
-      --primary: #00ff9d; /* Neon Yeşil */
-      --accent: #ff00aa;  /* Pembe Accent */
-      --bg: #030303;      /* Derin Siyah */
+      --primary: #00ff9d;
+      --accent: #ff00aa;
+      --bg: #030303;
       --card-bg: rgba(15, 15, 15, 0.9);
-      --text: #e0ffe0;    /* Hafif Yeşilimsi Beyaz */
+      --text: #e0ffe0;
       --glass: rgba(255, 255, 255, 0.03);
       --glass-border: rgba(0, 255, 157, 0.15);
     }
@@ -55,22 +54,35 @@
       color: var(--primary);
       text-decoration: none;
       text-shadow: 0 0 10px var(--primary);
+      letter-spacing: -1px;
     }
 
-    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
     .nav-links a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
       font-size: 0.9rem;
-      opacity: 0.7;
       transition: 0.3s;
+      opacity: 0.7;
+      padding: 5px 10px;
+      border-radius: 6px;
     }
-    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--primary); }
+
+    .nav-links a:hover, .nav-links a.active {
+      opacity: 1;
+      color: var(--primary);
+      background: rgba(0, 255, 157, 0.08);
+    }
 
     header {
       padding: 10rem 1.5rem 6rem;
       text-align: center;
+      background: radial-gradient(circle at center, rgba(0,255,157,0.08) 0%, transparent 70%);
     }
 
     .hero-logo-svg {
@@ -82,11 +94,25 @@
     .hero-title {
       font-size: clamp(3rem, 10vw, 5.5rem);
       font-weight: 900;
+      letter-spacing: -3px;
       background: linear-gradient(to right, #fff, var(--primary), #fff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       margin-bottom: 1.5rem;
+      animation: titleGlow 6s infinite;
+    }
+
+    @keyframes titleGlow {
+      0%, 100% { text-shadow: 0 0 20px rgba(0,255,157,0.2); }
+      50% { text-shadow: 0 0 40px rgba(0,255,157,0.5); }
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      opacity: 0.8;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
     }
 
     .btn {
@@ -97,10 +123,12 @@
       font-weight: 800;
       border-radius: 12px;
       text-decoration: none;
-      transition: 0.4s;
+      transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: none;
       cursor: pointer;
       text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1rem;
     }
 
     .btn:hover {
@@ -115,9 +143,23 @@
       margin-left: 1rem;
     }
 
-    section { max-width: 1200px; margin: 0 auto; padding: 6rem 1.5rem; }
-    .section-head { text-align: center; margin-bottom: 4rem; }
-    .section-head h2 { font-size: 2.8rem; font-weight: 800; color: var(--primary); }
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-head h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-shadow: 0 0 15px rgba(0,255,157,0.3);
+    }
 
     .product-grid {
       display: grid;
@@ -134,21 +176,63 @@
       flex-direction: column;
       transition: 0.4s ease;
       position: relative;
+      overflow: hidden;
     }
 
     .card:hover {
       border-color: var(--primary);
       transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 255, 157, 0.15);
     }
 
     .card-badge {
-      position: absolute; top: 1.25rem; right: 1.25rem;
-      background: var(--accent); color: white;
-      padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 700;
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: var(--accent);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
-    .card-price { font-size: 2.2rem; font-weight: 800; margin-bottom: 1.5rem; }
-    .card-price span { font-size: 1rem; opacity: 0.4; text-decoration: line-through; }
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .card-price span {
+      font-size: 1rem;
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
 
     .support-container {
       background: var(--card-bg);
@@ -159,17 +243,22 @@
       margin: 0 auto;
     }
 
-    .form-control {
-      width: 100%; padding: 1rem; background: rgba(0,0,0,0.3);
-      border: 1px solid #222; border-radius: 10px; color: #fff;
-      margin-bottom: 1.5rem;
-    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; color: var(--primary); font-size: 0.9rem; font-weight: 600; }
+    .form-control { width: 100%; padding: 1rem; background: rgba(0,0,0,0.3); border: 1px solid #222; border-radius: 10px; color: #fff; font-size: 1rem; }
 
     footer {
       text-align: center;
       padding: 4rem 1.5rem;
       border-top: 1px solid var(--glass-border);
       opacity: 0.6;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.8rem; }
+      .btn-secondary { margin-left: 0; margin-top: 1rem; }
+      .support-container { padding: 2rem; }
     }
   </style>
 </head>
@@ -180,7 +269,7 @@
   <nav>
     <a href="#ev" class="nav-logo">WAST-o</a>
     <div class="nav-links">
-      <a href="#ev">Anasayfa</a>
+      <a href="#ev" class="active">Anasayfa</a>
       <a href="#katalog">Katalog</a>
       <a href="#destek">Destek</a>
     </div>
@@ -191,19 +280,16 @@
       <defs>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="10" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
       <circle cx="200" cy="100" r="90" fill="none" stroke="#00ff9d" stroke-width="15" filter="url(#glow)"/>
       <text x="200" y="125" font-family="Arial Black, sans-serif" font-size="130" fill="#00ff9d" text-anchor="middle" font-weight="bold" filter="url(#glow)">WO</text>
     </svg>
     <h1 class="hero-title">WAST-o Akademisi</h1>
-    <p style="opacity: 0.8; max-width: 700px; margin: 0 auto 2.5rem;">2026'nın en güçlü ve güncel internetten para kazanma yöntemleri ile geleceğini inşa et.</p>
-    <div>
-        <a href="#katalog" class="btn">Keşfet</a>
+    <p class="hero-tagline">2026'nın en güçlü internetten para kazanma yöntemleri. Dijital geleceğini bugünden inşa et.</p>
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <a href="#katalog" class="btn">Rehberleri Keşfet</a>
         <a href="#destek" class="btn btn-secondary">İletişime Geç</a>
     </div>
   </header>
@@ -212,38 +298,72 @@
     <div class="section-head">
       <h2>Dijital Katalog</h2>
     </div>
+    
     <div class="product-grid">
       <div class="card">
         <span class="card-badge">En Popüler</span>
+        <div class="card-icon">🚀</div>
         <h3>WAST-o Master PDF</h3>
         <p>50'den fazla internetten para kazanma yöntemi. Başlangıç için en kapsamlı rehber.</p>
         <div class="card-price">30 TL <span>60 TL</span></div>
-        <a href="#" class="btn">Satın Al</a>
+        <a href="https://www.itemsatis.com/diger-urun-satislari/wast-o-ilan-intten-para-kazan-oto-teslim-5052586.html" target="_blank" class="btn">Hemen Satın Al</a>
       </div>
+
       <div class="card">
-        <h3>AI Rehberi</h3>
-        <p>Yapay zeka araçlarıyla pasif gelir kapıları oluşturma stratejileri.</p>
+        <span class="card-badge" style="background:#0077ff;">Yeni</span>
+        <div class="card-icon">🤖</div>
+        <h3>AI & Otomasyon</h3>
+        <p>Yapay zeka ile pasif gelir kapıları oluşturma stratejileri.</p>
         <div class="card-price">50 TL <span>100 TL</span></div>
-        <a href="#" class="btn" style="background:#333; color:#888; cursor:not-allowed;">Yakında</a>
+        <a href="#" class="btn" style="background:#333; color:#888; cursor:not-allowed;">Çok Yakında</a>
       </div>
     </div>
   </section>
 
   <section id="destek">
+    <div class="section-head">
+      <h2>İletişim & Destek</h2>
+    </div>
     <div class="support-container">
-      <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Bize Yazın</h2>
-      <form action="#" method="POST">
-        <input type="text" class="form-control" placeholder="Adınız" required>
-        <input type="email" class="form-control" placeholder="E-posta Adresiniz" required>
-        <textarea class="form-control" rows="6" placeholder="Mesajınız" required></textarea>
-        <button type="submit" class="btn" style="width: 100%;">Gönder</button>
+      <form action="https://formspree.io/f/xzdjqvak" method="POST">
+        <div class="form-group">
+          <label>Adın</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>E-posta</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Mesajın</label>
+          <textarea name="message" class="form-control" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn">Gönder</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 WAST-o Digital Academy | Tüm Hakları Saklıdır.</p>
+    <p>© 2026 WAST-o Digital Academy | İletişim: editlerbts@gmail.com</p>
   </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section, header');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      let current = '';
+      sections.forEach(section => {
+        if (pageYOffset >= section.offsetTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) link.classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
+
